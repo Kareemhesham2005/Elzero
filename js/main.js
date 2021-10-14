@@ -9,3 +9,14 @@ menuBtn.addEventListener("click", function () {
     menu.style.top = "72px";
   }
 });
+
+let megaMenu = document.querySelector(".mega-menu");
+let links = document.querySelector("header .menu > li:last-Child");
+
+links.addEventListener("click", function () {
+  if (megaMenu.classList.contains("show")) {
+    megaMenu.classList.remove("show");
+  } else {
+    megaMenu.classList.add("show");
+  }
+});
