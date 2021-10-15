@@ -3,6 +3,7 @@
   --main-color: #2196f3;
   --main-color-alt: #1787e0;
   --main-transition: 0.3s;
+  --main-padding: 100px;
 }
 body {
   font-family: "Cairo", sans-serif;
@@ -44,6 +45,51 @@ html {
   }
 }
 /* End Global Rules */
+/* Start Components */
+.main-heading {
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid black;
+  position: relative;
+  width: fit-content;
+  padding: 10px 20px;
+  margin: 0 auto 100px;
+  cursor: pointer;
+  transition: var(--main-transition);
+}
+.main-heading::before,
+.main-heading::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  width: 12px;
+  height: 12px;
+  transform: translateY(-50%);
+  border-radius: 50%;
+  background-color: var(--main-color);
+  transition: 0.5s;
+}
+.main-heading::after {
+  left: auto;
+  right: -30px;
+}
+.main-heading:hover {
+  color: white;
+  border: 2px solid white;
+  transition-delay: 0.5s;
+}
+.main-heading:hover::before {
+  z-index: -1;
+  animation: heading-before 0.5s linear forwards;
+  -webkit-animation: heading-before 0.5s linear forwards;
+}
+.main-heading:hover::after {
+  z-index: -1;
+  animation: heading-after 0.5s linear forwards;
+  -webkit-animation: heading-after 0.5s linear forwards;
+}
+/* End Components */
 
 /* Start Header */
 header {
@@ -317,6 +363,21 @@ header .mega-menu .links li a i {
   }
 }
 /* End Landing */
+/* Start Articles */
+#articles {
+  padding: var(--main-padding) 0;
+}
+#articles .container {
+}
+#articles .box {
+}
+#articles .box img {
+}
+#articles .box .content {
+}
+#articles .box .info {
+}
+/* End Articles */
 /* Start Animations */
 @keyframes up-and-down {
   0%,
@@ -339,6 +400,30 @@ header .mega-menu .links li a i {
   40%,
   60% {
     transform: translateY(-10px);
+  }
+}
+@keyframes heading {
+  20% {
+    overflow: hidden;
+  }
+  100% {
+    color: white;
+  }
+}
+@keyframes heading-before {
+  100% {
+    left: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
+  }
+}
+@keyframes heading-after {
+  100% {
+    right: 0;
+    border-radius: 0;
+    width: 100%;
+    height: 100%;
   }
 }
 /* End Animations */
