@@ -4,7 +4,7 @@ menuBtn.addEventListener("click", function () {
   if (menuBtn.classList.contains("open")) {
     megaMenu.classList.remove("show");
     menuBtn.classList.remove("open");
-    menu.style.top = "-550%";
+    menu.style.top = "-2000%";
   } else {
     menuBtn.classList.add("open");
     menu.style.top = "72px";
