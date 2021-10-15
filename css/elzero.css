@@ -77,17 +77,17 @@ html {
 .main-heading:hover {
   color: white;
   border: 2px solid white;
-  transition-delay: 0.5s;
+  transition-delay: 0.7s;
 }
 .main-heading:hover::before {
   z-index: -1;
-  animation: heading-before 0.5s linear forwards;
-  -webkit-animation: heading-before 0.5s linear forwards;
+  animation: heading-before 0.7s linear forwards;
+  -webkit-animation: heading-before 0.7s linear forwards;
 }
 .main-heading:hover::after {
   z-index: -1;
-  animation: heading-after 0.5s linear forwards;
-  -webkit-animation: heading-after 0.5s linear forwards;
+  animation: heading-after 0.7s linear forwards;
+  -webkit-animation: heading-after 0.7s linear forwards;
 }
 /* End Components */
 
@@ -440,7 +440,12 @@ max-width: 100%;
     color: white;
   }
 }
-@keyframes heading-before {
+ @keyframes heading-before {
+  50% {
+    left: 0;
+    width: 12px;
+    height: 12px;
+  }
   100% {
     left: 0;
     border-radius: 0;
@@ -449,6 +454,11 @@ max-width: 100%;
   }
 }
 @keyframes heading-after {
+  50% {
+    right: 0;
+    width:12px;
+    height:12px;
+  }
   100% {
     right: 0;
     border-radius: 0;
