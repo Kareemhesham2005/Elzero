@@ -4,6 +4,7 @@
   --main-color-alt: #1787e0;
   --main-transition: 0.3s;
   --main-padding: 100px;
+  --section-bg-color: #ececec;
 }
 body {
   font-family: "Cairo", sans-serif;
@@ -56,6 +57,8 @@ html {
   margin: 0 auto 100px;
   cursor: pointer;
   transition: var(--main-transition);
+  text-transform: uppercase;
+  z-index: 10;
 }
 .main-heading::before,
 .main-heading::after {
@@ -69,6 +72,7 @@ html {
   border-radius: 50%;
   background-color: var(--main-color);
   transition: 0.5s;
+  z-index: -1;
 }
 .main-heading::after {
   left: auto;
@@ -80,17 +84,14 @@ html {
   transition-delay: 0.7s;
 }
 .main-heading:hover::before {
-  z-index: -1;
   animation: heading-before 0.7s linear forwards;
   -webkit-animation: heading-before 0.7s linear forwards;
 }
 .main-heading:hover::after {
-  z-index: -1;
   animation: heading-after 0.7s linear forwards;
   -webkit-animation: heading-after 0.7s linear forwards;
 }
 /* End Components */
-
 /* Start Header */
 header {
   box-shadow: 0 0 10px #ddd;
@@ -299,7 +300,7 @@ header .mega-menu .links li a i {
   top: -100px;
   width: 100%;
   height: 100%;
-  background-color: #ececec;
+  background-color: var(--section-bg-color);
   z-index: -1;
   transform: skewY(-6deg);
 }
@@ -384,11 +385,10 @@ header .mega-menu .links li a i {
   box-shadow: 0 2px 15px rgb(0 0 0 / 20%);
 }
 #articles .box img {
-max-width: 100%;
+  max-width: 100%;
 }
 #articles .box .content {
   padding: 20px;
-  
 }
 #articles .box .content p {
   color: #777;
@@ -408,6 +408,51 @@ max-width: 100%;
   animation: arrow-moving 0.6s linear infinite;
 }
 /* End Articles */
+/* Start Gallery */
+#gallery {
+  padding: var(--main-padding) 0;
+  background-color: var(--section-bg-color);
+  position: relative;
+}
+#gallery .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+#gallery .container .box {
+  padding: 15px;
+  background-color: white;
+  box-shadow: 0 12px 20px 0px rgb(0 0 0 / 13%), 0px 2px 4px 0px rgb(0 0 0 / 12%);
+}
+#gallery .container .img {
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+#gallery .container .img::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: rgb(255 255 255 / 20%);
+  opacity: 0;
+  z-index: 2;
+}
+#gallery .container .img:hover::before {
+  animation: flashing 0.7s;
+  -webkit-animation: flashing 0.7s;
+}
+#gallery .container .img:hover img {
+  transform: rotate(5deg) scale(1.1);
+}
+#gallery .container .img img {
+  width: 100%;
+  transition: var(--main-transition);
+}
+/* End Gallery */
 /* Start Animations */
 @keyframes up-and-down {
   0%,
@@ -440,7 +485,7 @@ max-width: 100%;
     color: white;
   }
 }
- @keyframes heading-before {
+@keyframes heading-before {
   50% {
     left: 0;
     width: 12px;
@@ -456,8 +501,8 @@ max-width: 100%;
 @keyframes heading-after {
   50% {
     right: 0;
-    width:12px;
-    height:12px;
+    width: 12px;
+    height: 12px;
   }
   100% {
     right: 0;
@@ -469,6 +514,17 @@ max-width: 100%;
 @keyframes arrow-moving {
   100% {
     transform: translateX(10px);
+  }
+}
+@keyframes flashing {
+  0%,
+  40% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    width: 200%;
+    height: 200%;
   }
 }
 /* End Animations */
