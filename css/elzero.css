@@ -53,6 +53,7 @@ html {
   border: 2px solid black;
   position: relative;
   width: fit-content;
+  width: -moz-fit-content;
   padding: 10px 20px;
   margin: 0 auto 100px;
   cursor: pointer;
@@ -499,6 +500,7 @@ header .mega-menu .links li a i {
 }
 #features .container > div h2 {
   width: fit-content;
+  width: -moz-fit-content;
   margin: auto;
   position: relative;
   font-size: 40px;
@@ -523,6 +525,7 @@ header .mega-menu .links li a i {
   display: block;
   border: 3px solid;
   width: fit-content;
+  width: -moz-fit-content;
   padding: 10px 30px;
   font-weight: bold;
   font-size: 20px;
