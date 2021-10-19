@@ -453,6 +453,127 @@ header .mega-menu .links li a i {
   transition: var(--main-transition);
 }
 /* End Gallery */
+/* Start Features */
+#features {
+  padding: var(--main-padding) 0;
+  background-color: white;
+  position: relative;
+}
+#features .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+#features .container > div {
+  text-align: center;
+  border: 1px solid #ccc;
+}
+#features .container > div .img {
+  position: relative;
+  overflow: hidden;
+}
+#features .container > div .img .overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 4px);
+  background-color: rgb(0 0 0 / 10%);
+}
+#features .container > div .img::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-style: solid;
+  border-width: 0px 0px 100px 750px;
+  border-color: transparent transparent white transparent;
+  z-index: 500;
+  transition: var(--main-transition);
+}
+#features .container > div .img img {
+  max-width: 100%;
+}
+#features .container > div:hover .img::before {
+  border-width: 100px 750px 100px 0px;
+}
+#features .container > div h2 {
+  width: fit-content;
+  margin: auto;
+  position: relative;
+  font-size: 40px;
+}
+#features .container > div h2::before {
+  content: "";
+  position: absolute;
+  bottom: -20px;
+  left: 15px;
+  height: 5px;
+  width: calc(100% - 30px);
+  background-color: red;
+}
+#features .container > div p {
+  margin: 30px 0;
+  padding: 25px;
+  font-size: 20px;
+  line-height: 2;
+  color: #555;
+}
+#features .container > div a {
+  display: block;
+  border: 3px solid;
+  width: fit-content;
+  padding: 10px 30px;
+  font-weight: bold;
+  font-size: 20px;
+  margin: 20px auto;
+  transition: var(--main-transition);
+  border-radius: 6px;
+}
+#features .container > div:first-child .img .overlay {
+  background-color: #f4403699;
+}
+#features .container > div:first-child h2::before {
+  background-color: #f44036;
+}
+#features .container > div:first-child a {
+  color: #f44036;
+  border-color: #f44036;
+  background: linear-gradient(to right, #f44036 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+#features .container > div:nth-child(2) .img .overlay {
+  background-color: #0d9c8c99;
+}
+#features .container > div:nth-child(2) h2::before {
+  background-color: #0d9c8c;
+}
+#features .container > div:nth-child(2) a {
+  color: #0d9c8c;
+  border-color: #0d9c8c;
+  background: linear-gradient(to right, #0d9c8c 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+#features .container > div:nth-child(3) .img .overlay {
+  background-color: #0eadf599;
+}
+#features .container > div:nth-child(3) h2::before {
+  background-color: #0eadf5;
+}
+#features .container > div:nth-child(3) a {
+  color: #0eadf5;
+  border-color: #0eadf5;
+  background: linear-gradient(to right, #0eadf5 50%, white 50%);
+  background-size: 200% 100%;
+  background-position: right bottom;
+}
+#features .container > div a:hover {
+  color: white;
+  background-position: left bottom;
+}
+/* End Features */
 /* Start Animations */
 @keyframes up-and-down {
   0%,

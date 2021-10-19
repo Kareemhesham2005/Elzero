@@ -13,11 +13,14 @@ menuBtn.addEventListener("click", function () {
 
 let megaMenu = document.querySelector(".mega-menu");
 let links = document.querySelector("header .menu > li:last-Child");
+let a = document.querySelector("header .menu > li:last-Child a");
 
-links.addEventListener("click", function () {
-  if (megaMenu.classList.contains("show")) {
-    megaMenu.classList.remove("show");
-  } else {
-    megaMenu.classList.add("show");
+links.addEventListener("click", function (e) {
+  if (e.target === a) {
+    if (megaMenu.classList.contains("show")) {
+      megaMenu.classList.remove("show");
+    } else {
+      megaMenu.classList.add("show");
+    }
   }
 });
