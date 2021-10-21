@@ -261,19 +261,17 @@ header .container .menu > li:hover > a {
 }
 header .mega-menu {
   overflow: hidden;
-  display: flex;
   justify-content: space-evenly;
   gap: 40px;
   width: 100%;
   background-color: white;
   position: absolute;
   left: 0;
-  top: calc(100% + 50px);
-  z-index: -1;
+  top: 100%;
   padding: 30px;
   border-bottom: 3px solid var(--main-color);
-  opacity: 0;
-  transition: top var(--main-transition), opacity var(--main-transition);
+  display: none;
+  z-index: -1;
 }
 header .mega-menu .image img {
   width: 400px;
@@ -327,9 +325,7 @@ header .mega-menu .links li a i {
   }
 }
 .show {
-  opacity: 1 !important;
-  z-index: 100 !important;
-  top: 100% !important;
+  display: flex !important;
 }
 /* End Header */
 /* Start Landing */
