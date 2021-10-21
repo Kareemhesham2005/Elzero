@@ -557,7 +557,7 @@ header .mega-menu .links li a i {
   bottom: 0;
   right: 0;
   border-style: solid;
-  border-width: 0px 0px 100px 750px;
+  border-width: 0px 0px 170px 550px;
   border-color: transparent transparent white transparent;
   z-index: 500;
   transition: var(--main-transition);
@@ -570,7 +570,7 @@ header .mega-menu .links li a i {
   max-width: 100%;
 }
 #features .container > div:hover .img::before {
-  border-width: 100px 750px 100px 0px;
+  border-width: 170px 550px 170px 0px;
 }
 #features .container > div h2 {
   width: fit-content;
@@ -711,6 +711,159 @@ header .mega-menu .links li a i {
   color: #777;
 }
 /* End Testimonials */
+/* Start Team Members*/
+#team {
+  padding: var(--main-padding) 0;
+  position: relative;
+}
+#team .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 40px;
+}
+#team .container .box {
+  padding: 60px 0 0;
+  border-radius: 10px;
+  position: relative;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+#team .container .box::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: calc(100% - 60px);
+  height: 100%;
+  background-color: var(--section-bg-color);
+  z-index: -2;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+}
+#team .container .box::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 100%;
+  background-color: #e4e4e4;
+  z-index: -1;
+  border-radius: 6px;
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+#team .container .box:hover::after {
+  width: calc(100% - 60px);
+}
+#team .container .box .data {
+  width: calc(100% - 60px);
+  overflow: hidden;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+#team .container .box .data img {
+  width: 100%;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+#team .container .box:hover img {
+  filter: grayscale(100%);
+  -webkit-filter: grayscale(100%);
+}
+#team .container .box .data .social {
+  width: 60px;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+#team .container .box .data .social a {
+  display: flex;
+  flex-direction: column;
+  width: 60px;
+  height: 50px;
+  justify-content: center;
+  align-items: center;
+  color: #777;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+#team .container .box .data .social a:hover {
+  color: var(--main-color);
+}
+#team .container .box .info {
+  width: calc(100% - 60px);
+  margin-left: 60px;
+}
+#team .container .box .info h3 {
+  color: var(--main-color);
+  margin: 15px;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+#team .container .box .info p {
+  margin: 15px;
+}
+#team .box:hover .info h3 {
+  color: #777;
+}
+@media (max-width: 670px) {
+  #team {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  #team .container .box::before {
+    width: 100%;
+  }
+  #team .container .box:hover::after {
+    width: 100%;
+  }
+  #team .container .box .data {
+    margin-left: 15px;
+  }
+  #team .container .box .data .social,
+  #team .container .box .data .social a {
+    width: 45px;
+  }
+  #team .container .box .info {
+    margin-left: 0;
+  }
+  #team .container .box {
+    max-width: 450px;
+  }
+}
+/* End Team Members */
 /* Start Animations */
 @keyframes up-and-down {
   0%,
