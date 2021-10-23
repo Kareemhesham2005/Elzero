@@ -114,6 +114,26 @@ html {
     linear-gradient(225deg, white 25%, transparent 25%);
   background-size: 30px 30px;
 }
+.dots {
+  background-image: url(../images/dots.png);
+  height: 186px;
+  width: 204px;
+  background-repeat: no-repeat;
+  position: absolute;
+}
+.dots.up {
+  top: 100px;
+  right: 0;
+}
+.dots.down {
+  bottom: 50px;
+  left: 0;
+}
+@media (max-width: 1022px) {
+  .dots {
+    display: none;
+  }
+}
 /* End Components */
 /* Start Header */
 header {
@@ -1121,6 +1141,314 @@ header .mega-menu .links li a i {
   }
 }
 /* End How */
+/* Start Events */
+#events {
+  padding: var(--main-padding) 0;
+  position: relative;
+}
+#events .container .content {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+#events .container .content .info {
+  flex: 1;
+  position: relative;
+}
+#events .container .content .info .time {
+  display: flex;
+  align-items: center;
+  margin: 20px auto;
+  gap: 10px;
+  justify-content: center;
+}
+#events .container .content .info .time .unit {
+  cursor: pointer;
+  border: 1px solid #d4d4d4;
+  width: 75px;
+  text-align: center;
+  border-radius: 6px;
+  transition: var(--main-transition);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+#events .container .content .info .time .unit span {
+  display: block;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+#events .container .content .info .time .unit span:first-child {
+  font-size: 35px;
+  padding: 15px;
+  color: var(--main-color);
+  font-weight: bold;
+}
+#events .container .content .info .time .unit span:last-child {
+  padding: 8px 10px;
+  font-size: 13px;
+  border-top: 1px solid #d4d4d4;
+}
+#events .container .content .info .time .unit:hover {
+  border-color: var(--main-color);
+}
+#events .container .content .info .time .unit:hover span:last-child {
+  border-top-color: var(--main-color);
+}
+#events .container .content .info .text h2 {
+  text-align: center;
+  margin: 40px 0 0;
+  font-size: 30px;
+}
+#events .container .content .info .text p {
+  text-align: center;
+  line-height: 1.7;
+  font-size: 19px;
+  color: #777;
+  margin: 20px auto;
+}
+#events .container .content .img {
+  max-width: 450px;
+}
+#events .container .content .img img {
+  max-width: 100%;
+}
+#events .container .input {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#events .container .input form {
+  margin-top: 50px;
+  display: flex;
+  gap: 20px;
+  width: 600px;
+  padding: 30px 40px;
+  background-color: #f6f5f5;
+  border-radius: 50px;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+#events .container .input input::placeholder,
+#events .container .input input {
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+#events .container .input input:first-child {
+  padding: 20px;
+  border-radius: 50px;
+  border: none;
+  flex: 1;
+  caret-color: var(--main-color);
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+#events .container .input input:first-child:focus {
+  outline: none;
+}
+#events .container .input input:first-child:focus::placeholder {
+  opacity: 0;
+}
+#events .container .input input:last-child {
+  border-radius: 50px;
+  border: none;
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  padding: 20px;
+  cursor: pointer;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -o-border-radius: 50px;
+}
+#events .container .input input:last-child:hover {
+  background-color: var(--main-color-alt);
+}
+@media (max-width: 400px) {
+  #events .container .content .info .time .unit {
+    width: 60px;
+  }
+  #events .container .content .info .time .unit span:first-child {
+    font-size: 25px;
+  }
+  #events .container .content .info .time .unit span:last-child {
+    font-size: 12px;
+  }
+}
+@media (max-width: 767px) {
+  #events .container .input {
+    width: 100%;
+  }
+  #events .container .input form {
+    max-width: 100%;
+    padding: 20px;
+    flex-direction: column;
+    border-radius: 0;
+    margin: 20px auto;
+  }
+  #events .container .input input {
+    border-radius: 0 !important;
+    -webkit-border-radius: 0 !important;
+    -moz-border-radius: 0 !important;
+    -ms-border-radius: 0 !important;
+    -o-border-radius: 0 !important;
+  }
+}
+/* End Events */
+/* Start Pricing */
+#pricing {
+  padding: var(--main-padding) 0;
+  position: relative;
+  background-color: var(--section-bg-color);
+}
+#pricing .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 30px;
+}
+#pricing .container .plan {
+  position: relative;
+  box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+  transition: var(--main-transition);
+  background: white;
+  text-align: center;
+  z-index: 1;
+  background-color: white;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+#pricing .container .plan::before,
+#pricing .container .plan::after {
+  content: "";
+  width: 0;
+  height: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  background-color: #f6f6f6;
+  z-index: -1;
+  transition: var(--main-transition);
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+#pricing .container .plan::after {
+  left: auto;
+  right: 0;
+  top: auto;
+  bottom: 0;
+}
+#pricing .container .plan:hover::before,
+#pricing .container .plan:hover::after {
+  width: 100%;
+}
+#pricing .container .plan.popular {
+  top: -20px;
+}
+@media (max-width: 1200px) {
+  #pricing .container .plan.popular {
+    top: 0;
+  }
+}
+#pricing .container .plan.popular .label {
+  position: absolute;
+  writing-mode: vertical-rl;
+  background-color: var(--main-color);
+  color: white;
+  font-weight: bold;
+  padding: 10px 10px 35px 10px;
+  font-size: 18px;
+  right: 20px;
+  width: 40px;
+}
+#pricing .container .plan.popular .label::before {
+  content: "";
+  border-color: transparent transparent white transparent;
+  border-style: solid;
+  border-width: 20px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+#pricing .container .plan h3 {
+  font-weight: bold;
+  margin: 30px 0;
+  font-size: 25px;
+  letter-spacing: -1px;
+}
+#pricing .container .plan img {
+  width: 80px;
+  margin-bottom: 30px;
+}
+#pricing .container .plan p.price {
+  font-size: 60px;
+  font-weight: bold;
+  margin-bottom: 5px;
+  color: var(--main-color);
+}
+#pricing .container .plan p.period {
+  color: #777;
+  margin-bottom: 20px;
+}
+#pricing .container .plan p.specs {
+  text-align: left;
+  padding: 20px;
+  border-top: 1px solid #eee;
+}
+#pricing .container .plan p.specs::before {
+  font-family: "Font Awesome 5 Pro";
+  content: "\f00c";
+  margin-right: 10px;
+  font-weight: 900;
+  color: var(--main-color);
+}
+#pricing .container .plan a {
+  width: fit-content;
+  width: -moz-fit-content;
+  display: block;
+  cursor: pointer;
+  border: 2px solid var(--main-color);
+  color: var(--main-color);
+  margin: 30px auto 40px;
+  padding: 15px 20px;
+  border-radius: 6px;
+  font-weight: bold;
+  transition: var(--main-transition);
+  -webkit-border-radius: 6px;
+  -moz-border-radius: 6px;
+  -ms-border-radius: 6px;
+  -o-border-radius: 6px;
+  -webkit-transition: var(--main-transition);
+  -moz-transition: var(--main-transition);
+  -ms-transition: var(--main-transition);
+  -o-transition: var(--main-transition);
+}
+#pricing .container .plan a:hover {
+  background-color: var(--main-color);
+  border-color: var(--main-color);
+  color: white;
+}
+/* End Pricing */
 /* Start Animations */
 @keyframes up-and-down {
   0%,
