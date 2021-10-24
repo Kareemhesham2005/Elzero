@@ -1449,6 +1449,47 @@ header .mega-menu .links li a i {
   color: white;
 }
 /* End Pricing */
+/* Start Videos */
+#video {
+  padding: var(--main-padding) 0;
+  position: relative;
+}
+#video .container {
+  display: flex;
+  align-items: center;
+}
+#video .container .adresses {
+  background-color: #f4f4f4;
+  min-width: 300px;
+  border: 1px solid #ddd;
+  border-right: none;
+}
+#video .container .adresses p.top {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+  font-weight: bold;
+  color: var(--main-color);
+}
+#video .container .adresses p:not(.top) {
+  padding: 20px;
+  border-top: 1px solid var(--section-background);
+  cursor: pointer;
+  transition: var(--main-transition);
+  background-color: white;
+}
+#video .container .adresses p:not(.top) span {
+  display: block;
+  margin-top: 10px;
+  color: #777;
+}
+#video .container .video {
+  background-color: #e2e2e2;
+}
+#video .container .video img {
+  max-width: 100%;
+}
+/* End Videos */
 /* Start Animations */
 @keyframes up-and-down {
   0%,
