@@ -30,3 +30,23 @@ links.addEventListener("click", function (e) {
     }
   }
 });
+
+let inputs = document.querySelectorAll("#discount input");
+
+inputs.forEach((input) => {
+  input.oninput = function () {
+    let maxLength = input.getAttribute("maxlength");
+    let count = input.value.length;
+    let firstProgress = document.querySelector(
+      "#discount .progress:first-of-type"
+    );
+    let secProgress = document.querySelector(
+      "#discount .progress:last-of-type"
+    );
+    if (inputs[0] == input) {
+      firstProgress.style.width = `${(count * 100) / maxLength}%`;
+    } else if (inputs[1] == input) {
+      secProgress.style.width = `${(count * 100) / maxLength}%`;
+    }
+  };
+});

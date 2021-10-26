@@ -1707,13 +1707,13 @@ header .mega-menu .links li a i {
 }
 #discount .container .request input,
 #discount .container .request textarea {
-  margin: 25px auto;
+  margin: 0 auto 25px;
   display: block;
   caret-color: var(--main-color);
   width: 100%;
   padding: 15px;
   border: none;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #ccc;
   background-color: #f9f9f9;
 }
 #discount .container .request textarea {
@@ -1751,6 +1751,14 @@ header .mega-menu .links li a i {
 }
 #discount .container .request input[type="submit"]:hover {
   background-color: var(--main-color-alt);
+}
+#discount .container .request .progress {
+  display: block;
+  width: 0;
+  height: 2px;
+  background-color: var(--main-color);
+  position: relative;
+  top: -27px;
 }
 @media (max-width: 970px) {
   #discount .container {

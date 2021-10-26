@@ -975,8 +975,20 @@
         <div class="request">
           <h2>Request A Discount</h2>
           <form action="">
-            <input type="text" placeholder="Your Name" name="name" />
-            <input type="email" placeholder="Your Email" name="email" />
+            <input
+              type="text"
+              placeholder="Your Name"
+              name="name"
+              maxlength="30"
+            />
+            <span class="progress"></span>
+            <input
+              type="email"
+              placeholder="Your Email"
+              name="email"
+              maxlength="30"
+            />
+            <span class="progress"></span>
             <input type="number" placeholder="Your Number" name="mobile" />
             <textarea placeholder="Tell Us About Your Needs"></textarea>
             <input type="submit" value="Send" />
