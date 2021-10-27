@@ -4,10 +4,10 @@ menuBtn.addEventListener("click", function () {
   if (menuBtn.classList.contains("open")) {
     megaMenu.classList.remove("show");
     menuBtn.classList.remove("open");
-    menu.style.top = "-2000%";
+    menu.style.left = "-50%";
   } else {
     menuBtn.classList.add("open");
-    menu.style.top = "72px";
+    menu.style.left = "50%";
   }
 });
 
@@ -53,19 +53,21 @@ inputs.forEach((input) => {
 
 let countDownDate = new Date("Dec 31, 2021 23:59:59").getTime();
 
-let counter = setInterval( () => {
+let counter = setInterval(() => {
   let datenow = new Date().getTime();
-  let date = countDownDate - datenow 
-  
+  let date = countDownDate - datenow;
+
   let days = Math.floor(date / 1000 / 60 / 60 / 24);
-  let hours = Math.floor(date % (1000 * 60 * 60 * 24) / (1000 * 60 * 60));
- let minutes = Math.floor(date % (1000 * 60 * 60) / (1000 * 60));
- let seconds = Math.floor(date % (1000 * 60) / (1000));
- document.querySelector(".days").innerHTML = days < 10 ? `0${days}`:days;
- document.querySelector(".hours").innerHTML = hours < 10 ? `0${hours}`:hours;
- document.querySelector(".minutes").innerHTML = minutes < 10 ? `0${minutes}`:minutes;
- document.querySelector(".seconds").innerHTML = seconds < 10 ? `0${seconds}`:seconds;
- if (date < 0) {
-   clearInterval(counter);
- }
-},1000);
+  let hours = Math.floor((date % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  let minutes = Math.floor((date % (1000 * 60 * 60)) / (1000 * 60));
+  let seconds = Math.floor((date % (1000 * 60)) / 1000);
+  document.querySelector(".days").innerHTML = days < 10 ? `0${days}` : days;
+  document.querySelector(".hours").innerHTML = hours < 10 ? `0${hours}` : hours;
+  document.querySelector(".minutes").innerHTML =
+    minutes < 10 ? `0${minutes}` : minutes;
+  document.querySelector(".seconds").innerHTML =
+    seconds < 10 ? `0${seconds}` : seconds;
+  if (date < 0) {
+    clearInterval(counter);
+  }
+}, 1000);
