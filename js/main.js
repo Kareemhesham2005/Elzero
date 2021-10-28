@@ -71,3 +71,14 @@ let counter = setInterval(() => {
     clearInterval(counter);
   }
 }, 1000);
+
+let progressBars = document.querySelectorAll("#skills .bar span");
+let section = document.querySelector("#skills");
+
+window.onscroll = function () {
+  if (window.scrollY >= section.offsetTop - 100) {
+    progressBars.forEach((bar) => {
+      bar.style.width = bar.getAttribute("data-width");
+    });
+  }
+};
