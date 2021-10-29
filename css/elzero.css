@@ -461,8 +461,8 @@ header .mega-menu .links li a i {
   -o-transform: translateX(-50%);
 }
 @media (max-width: 991px) {
-  #landing .img {
-    display: none;
+  #landing .container {
+    flex-direction: column-reverse;
   }
   #landing .content {
     text-align: center;
@@ -1031,6 +1031,9 @@ header .mega-menu .links li a i {
   display: flex;
   align-items: center;
 }
+#skills .container > img {
+  max-width: 100%;
+}
 #skills .container .skill {
   flex: 1;
 }
@@ -1070,8 +1073,11 @@ header .mega-menu .links li a i {
   -o-transition: 0.5s;
 }
 @media (max-width: 991.5px) {
-  #skills .container img {
-    display: none;
+  #skills .container {
+    flex-direction: column;
+  }
+  #skills .container .skill {
+    width: 100%;
   }
 }
 /* End Our-skills */
