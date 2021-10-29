@@ -73,12 +73,27 @@ let counter = setInterval(() => {
 }, 1000);
 
 let progressBars = document.querySelectorAll("#skills .bar span");
-let section = document.querySelector("#skills");
+let skills = document.querySelector("#skills");
+let stats = document.querySelector("#stats");
+let nums = document.querySelectorAll("#stats .stat h2");
 
 window.onscroll = function () {
-  if (window.scrollY >= section.offsetTop - 100) {
+  if (window.scrollY >= skills.offsetTop - 100) {
     progressBars.forEach((bar) => {
       bar.style.width = bar.getAttribute("data-width");
+    });
+  }
+  if (window.scrollY >= stats.offsetTop - 200) {
+    nums.forEach((num) => {
+      let goal = Number(num.getAttribute("data-num"));
+      let duration = 3000 / goal;
+      let count = setInterval(function () {
+        if (num.textContent < goal) {
+          num.textContent++;
+        } else {
+          clearInterval(count);
+        }
+      }, duration);
     });
   }
 };

@@ -1637,6 +1637,18 @@ header .mega-menu .links li a i {
   font-weight: bold;
   margin: 10px auto;
 }
+#stats .container .stat:last-child h2 {
+  position: relative;
+}
+#stats .container .stat:last-child h2::before {
+  content: "K";
+  font-size: 50px;
+  font-weight: bold;
+  margin: 10px auto;
+  position: absolute;
+  right: -28px;
+  top: -9px;
+}
 #stats .container .stat p {
   color: var(--main-color);
   font-style: italic;
