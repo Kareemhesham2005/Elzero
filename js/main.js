@@ -97,10 +97,8 @@ window.onscroll = function () {
     });
   }
 };
-
-let isOnline = navigator.onLine;
 let error = document.querySelector("div.error");
-if (isOnline == false) {
+window.addEventListener("offline", () => {
   let sections = document.querySelectorAll("section");
   sections.forEach((section) => {
     section.style.display = "none";
@@ -108,6 +106,13 @@ if (isOnline == false) {
     document.querySelector("footer").style.display = "none";
   });
   error.style.display = "flex";
-} else {
+});
+window.addEventListener("online", () => {
+  let sections = document.querySelectorAll("section");
+  sections.forEach((section) => {
+    section.style.display = "block";
+    document.querySelector("header").style.display = "block";
+    document.querySelector("footer").style.display = "block";
+  });
   error.style.display = "none";
-}
+});
