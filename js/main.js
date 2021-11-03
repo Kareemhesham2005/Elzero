@@ -97,3 +97,17 @@ window.onscroll = function () {
     });
   }
 };
+
+let isOnline = navigator.onLine;
+let error = document.querySelector("div.error");
+if (isOnline == false) {
+  let sections = document.querySelectorAll("section");
+  sections.forEach((section) => {
+    section.style.display = "none";
+    document.querySelector("header").style.display = "none";
+    document.querySelector("footer").style.display = "none";
+  });
+  error.style.display = "flex";
+} else {
+  error.style.display = "none";
+}
