@@ -159,7 +159,6 @@ html {
 /* Start Header */
 .preloader {
   background: #191f26 url(../images/loader.gif) no-repeat center center;
-  background-size: 50%;
   width: 100vw;
   height: 100vh;
   position: fixed;
