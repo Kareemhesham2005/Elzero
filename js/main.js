@@ -116,3 +116,11 @@ window.addEventListener("online", () => {
   });
   error.style.display = "none";
 });
+
+let loader = document.querySelector(".preloader");
+window.addEventListener("load", function () {
+  let load = setInterval(function () {
+    loader.style.display = "none";
+    clearInterval(load);
+  }, 2000);
+});
