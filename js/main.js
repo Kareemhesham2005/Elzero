@@ -97,30 +97,31 @@ window.onscroll = function () {
     });
   }
 };
-let error = document.querySelector("div.error");
-window.addEventListener("offline", () => {
-  let sections = document.querySelectorAll("section");
-  sections.forEach((section) => {
-    section.style.display = "none";
-    document.querySelector("header").style.display = "none";
-    document.querySelector("footer").style.display = "none";
-  });
-  error.style.display = "flex";
-});
-window.addEventListener("online", () => {
-  let sections = document.querySelectorAll("section");
-  sections.forEach((section) => {
-    section.style.display = "block";
-    document.querySelector("header").style.display = "block";
-    document.querySelector("footer").style.display = "block";
-  });
-  error.style.display = "none";
-});
-
-let loader = document.querySelector(".preloader");
-window.addEventListener("load", function () {
-  let load = setInterval(function () {
-    loader.style.display = "none";
-    clearInterval(load);
-  }, 2000);
-});
+// let error = document.querySelector("div.error");
+// window.addEventListener("offline", () => {
+//   let sections = document.querySelectorAll("section");
+//   sections.forEach((section) => {
+//     section.style.display = "none";
+//     document.querySelector("header").style.display = "none";
+//     document.querySelector("footer").style.display = "none";
+//   });
+//   error.style.display = "flex";
+// });
+// window.addEventListener("online", () => {
+//   let sections = document.querySelectorAll("section");
+//   sections.forEach((section) => {
+//     section.style.display = "block";
+//     document.querySelector("header").style.display = "block";
+//     document.querySelector("footer").style.display = "block";
+//   });
+//   error.style.display = "none";
+// });
+//
+// let loader = document.querySelector(".preloader");
+//
+// window.addEventListener("load", function () {
+//   loader.style.display = "none";
+// });
+//
+// let controller = new ScrollMagic.Controller();
+// let tl = new TimelineMax();
